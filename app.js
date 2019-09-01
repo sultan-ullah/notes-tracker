@@ -38,30 +38,30 @@ app.post('/create', (req, res) => {
 
 // SHOW
 app.get('/notes/:id', (req, res) => {
-    Note.getNotesList()
-        .then((list) => {
-            let selected = list[req.params.id];
+    Note.getNote(req.params.id)
+        .then(note => {
             res.render('show', {
-                id : selected.id,
-                title : selected.title, 
-                text : selected.text,
-                created: formatDate(selected.timestamp)
+                id : note.id,
+                title : note.title, 
+                text : note.text,
+                created: formatDate(note.timestamp)
             });
-        });
+        })
+        .catch(err => console.log(err))
 });
 
 // EDIT
 app.get('/notes/:id/edit', (req, res) => {
-    Note.getNotesList()
-        .then((list) => {
-            let selected = list[req.params.id];
+    Note.getNote(req.params.id)
+        .then(note => {
             res.render('edit', {
-                id : selected.id,
-                title : selected.title, 
-                text : selected.text,
-                created: formatDate(selected.timestamp)
+                id : note.id,
+                title : note.title, 
+                text : note.text,
+                created: formatDate(note.timestamp)
             });
-        });
+        })
+        .catch(err => console.log(err))
 });
 
 // UPDATE

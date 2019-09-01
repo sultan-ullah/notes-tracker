@@ -3,8 +3,7 @@ block body
     div(class="row")
         div(class="column")
             
-            form(class="ui form", action="/notes/" + id + "/edit?_method=PUT", method="post")
-                input(type="hidden", name="_method" value="put")
+            form(class="ui form edit-form", action="/notes/" + id + "/edit?_method=PUT", method="post")
                 div(class="field") 
                     label Title
                     div(class="ui input")
@@ -16,6 +15,6 @@ block body
                 button(type="submit", class="ui icon positive submit button")
                     i(class="check icon")
 
-                form(method="POST", action="/notes/" + id + "/delete?_method=DELETE", class="delete-button")
-                        button(class="ui icon red button", type="submit")
-                            i(class="trash icon") 
+            form(method="POST", action="/notes/" + id + "/delete?_method=DELETE", class="delete-button")
+                    button(class="ui icon red button", type="submit")
+                        i(class="trash icon") 

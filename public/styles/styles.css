@@ -14,3 +14,7 @@ input {
 .delete-button {
     display: inline-block;
 }
+
+.edit-form {
+    display: inline;
+}

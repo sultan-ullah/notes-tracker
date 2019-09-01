@@ -102,6 +102,10 @@ class Note {
         });
     }
 
+    /**
+     * Get a note from the notes list (helper method)
+     * @param {integer} id 
+     */
     static getNote(id) {
         return new Promise((resolve, reject) => {
             Note.readJSONData()
@@ -119,7 +123,7 @@ class Note {
     }
 
     /**
-     * Retrieves a list of all the notes through the json file
+     * Retrieves a list of all the notes through the json file (helper method)
      * Returns a promise
      */
     static getNotesList() {
