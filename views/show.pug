@@ -1,0 +1,12 @@
+extends layout
+block body
+    div(class="row")
+        div(class="column")
+            h3= title
+            h5= created
+            p= text
+    div(class="row")
+        div(class="column")
+            a(href="" + id + "/edit")
+                button(class="ui primary icon button")
+                    i(class="pencil alternate icon")

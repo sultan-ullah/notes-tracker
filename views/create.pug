@@ -1,0 +1,14 @@
+extends layout
+block body
+    div(class="row")
+        div(class="column")
+            form(class="ui form" action="/create" method="post")
+                div(class="field") 
+                    label Title
+                    div(class="ui input")
+                        input(type="text", name="title", required)
+                div(class="field")
+                    label Note
+                    div(class="ui input")
+                        textarea(name="text", required)
+                button(type="submit", class="ui submit button") Submit 
